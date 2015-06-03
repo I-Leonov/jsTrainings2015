@@ -6,10 +6,10 @@ var sum = function (a, b, index, arr) {
 };
 var linearFold = function (arr, callback, initialValue) {
 
-    if (initialValue == null) {
+    if (arguments.length == 2) {
         initialValue = 0;
     }
-    for (var i = 0; i<arr.length; i++) {
+    for (var i = 0, length = arr.length; i < length; i++) {
         initialValue = callback(initialValue, arr[i], i, arr);
     }
     return initialValue;

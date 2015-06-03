@@ -7,7 +7,7 @@ var filterCallback = function (element) {
 };
 var filter = function (arr, callback) {
     var result = [];
-    for (var i = 0; i < arr.length; i++) {
+    for (var i = 0, length = arr.length; i < length; i++) {
         if (callback(arr[i])) {
             result.push(arr[i]);
         }

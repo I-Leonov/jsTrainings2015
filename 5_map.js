@@ -7,7 +7,7 @@ var myFun = function (element) {
 
 var map = function (arr, fn) {
     var result = [];
-    for (var i = 0; i < arr.length; i++) {
+    for (var i = 0, length = arr.length; i < length; i++) {
         result.push(fn(arr[i]));
     }
     return result;

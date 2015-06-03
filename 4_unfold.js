@@ -2,7 +2,7 @@
  * Created by Igor.Leonov on 5/27/2015.
  */
 
-var tuple = function (state, element) {
+var Tuple = function (state, element) {
     this.state = state;
     this.element = element;
 };
@@ -11,9 +11,9 @@ function getLastDigit(number) {
     var rest = Math.floor(number / 10);
     var digit = number % 10;
     if (rest > 0) {
-        return new tuple(rest, digit);
+        return new Tuple(rest, digit);
     } else {
-        return new tuple(false, digit);
+        return new Tuple(false, digit);
     }
 }
 
