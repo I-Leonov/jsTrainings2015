@@ -1,6 +1,6 @@
 
-define(['./alertLogger', './consoleLogger'],
-    function (alertLogger, consoleLogger) {
+define(['./alertLogger', './consoleLogger', './windowLogger'],
+    function (alertLogger, consoleLogger, windowLogger) {
 
         var innerLog = function(logger, message) {
             logger.log(message);
@@ -15,10 +15,14 @@ define(['./alertLogger', './consoleLogger'],
         var Console = new Abstract(consoleLogger);
 
         var Alert = new Abstract(alertLogger);
+        var Window = new Abstract(windowLogger);
+
+
 
         return {
             Console: Console,
-            Alert: Alert
+            Alert: Alert,
+            Window: Window
         }
 
     });
