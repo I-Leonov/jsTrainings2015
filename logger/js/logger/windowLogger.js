@@ -4,7 +4,7 @@ define(['../js/logger/basicLogger.js'], function (basicLogger) {
     var getOrCreateLogDiv = function () {
         if (!logDiv && window) {
             logDiv = document.createElement('div');
-            logDiv.style.cssText = 'width:100%;height:200px; overflow:auto; padding:0px; opacity:0.6;z-index:100;background:lightgray;bottom: 0px;left: 0px;';
+            logDiv.style.cssText = 'width:500px;height:200px; overflow:auto; padding:0px; opacity:0.6;z-index:100;background:red;bottom: 0px;left: 0px;';
             window.document.body.appendChild(logDiv);
         }
         return logDiv;

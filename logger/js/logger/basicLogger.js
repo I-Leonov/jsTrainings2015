@@ -5,7 +5,12 @@ define([], function () {
         };
 
         this.log = function(message) {
-            this.writerFn(message);
+            this.writerFn(this.format(message));
+        };
+
+        this.format = function(string) {
+            var now = new Date();
+            return now.toLocaleTimeString() + " - " + string;
         }
     }
 

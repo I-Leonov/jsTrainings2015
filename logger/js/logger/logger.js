@@ -17,12 +17,15 @@ define(['./alertLogger', './consoleLogger'],
                         console.log("global error handling is already enabled for this logger")
                     } else {
                         enabled = true;
-                        window.onerror = function(errorMsg, url, lineNumber) {
+                        var oldHandler = window.onerror;
+                        window.onerror = function (errorMsg, url, lineNumber) {
                             if (enabled) {
 
                                 logFunction(errorMsg);
                             }
-                            oldErrorHandler(errorMsg, url, lineNumber);
+                            if (oldHandler != null) {
+                                oldHandler(errorMsg, url, lineNumber);
+                            }
 
                         }
                     }
@@ -50,7 +53,6 @@ define(['./alertLogger', './consoleLogger'],
 
         var Console = new Abstract(consoleLogger);
         var Alert = new Abstract(alertLogger);
-
 
 
         return {
